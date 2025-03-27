@@ -10,9 +10,9 @@ app.config['JWT_SECRET_KEY'] = 'supersecreto'  # Cambiar en producción
 
 db = SQLAlchemy(app)
 jwt = JWTManager(app)
-
+from models.blacklist import Blacklist
 from client.routes import *
 
 if __name__ == '__main__':
-    db.create_all()
+    # db.create_all()
     app.run(debug=True)
