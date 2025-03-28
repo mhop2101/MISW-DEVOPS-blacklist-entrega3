@@ -50,10 +50,19 @@ def add_to_blacklist():
 
     return jsonify({'message': 'Email agregado a la lista negra'}), 201
 
+
 @app.route('/blacklists/<string:email>', methods=['GET'])
 @jwt_required()
 def check_blacklist(email):
-   
-    return jsonify({'blacklisted': False}), 200
+    email = email.strip()
+    record = Blacklist.query.filter_by(email=email).first()
+
+    if record:
+        return jsonify({
+            'blacklisted': True,
+            'blocked_reason': record.blocked_reason
+        }), 200
+    else:
+        return jsonify({'blacklisted': False}), 200
 
 
