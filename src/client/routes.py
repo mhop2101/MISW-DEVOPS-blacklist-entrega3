@@ -1,19 +1,21 @@
-from flask import request, jsonify
+from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required, create_access_token
-from app import app, db
+from extensions import db  # Importa db desde extensions.py
 from models.blacklist import Blacklist
 import datetime
 import re
 
-@app.route('/login', methods=['GET'])
+# Crear un Blueprint para las rutas de blacklist
+routes_bp = Blueprint('routes_bp', __name__)
+
+@routes_bp.route('/login', methods=['GET'])
 def login():
     static_token = create_access_token(identity='static-user', expires_delta=False)
     return jsonify({'token': static_token}), 200
 
-@app.route('/blacklists', methods=['POST'])
+@routes_bp.route('/blacklists', methods=['POST'])
 @jwt_required()
 def add_to_blacklist():
-
     data = request.get_json()
 
     required_fields = ['email', 'app_uuid', 'blocked_reason']
@@ -50,8 +52,7 @@ def add_to_blacklist():
 
     return jsonify({'message': 'Email agregado a la lista negra'}), 201
 
-
-@app.route('/blacklists/<string:email>', methods=['GET'])
+@routes_bp.route('/blacklists/<string:email>', methods=['GET'])
 @jwt_required()
 def check_blacklist(email):
     email = email.strip()
@@ -64,5 +65,3 @@ def check_blacklist(email):
         }), 200
     else:
         return jsonify({'blacklisted': False}), 200
-
-
