@@ -1,0 +1,643 @@
+{
+	"info": {
+		"_postman_id": "5f30cad6-b2ff-4e6e-b0e7-4ead06f8bc16",
+		"name": "Entrega 1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25517715",
+		"_collection_link": "https://misw-devops.postman.co/workspace/MISW-DevOps~9a15b55a-f3c2-4baa-80a5-475bca957aef/collection/25517715-5f30cad6-b2ff-4e6e-b0e7-4ead06f8bc16?action=share&source=collection_link&creator=25517715"
+	},
+	"item": [
+		{
+			"name": "Solicitud agregar",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MzMwNzA3MSwianRpIjoiNjMyNTU0ZDgtN2FiOS00NTY1LWJkZTAtNzRkMTdhMGI5Y2FiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InN0YXRpYy11c2VyIiwibmJmIjoxNzQzMzA3MDcxLCJjc3JmIjoiMzYxNDQ2MjEtNjg0Ni00NTMwLWIyMGQtZDc3YzNmY2NkMTM4In0.b081hob56WxtLr1Ft2m-Bc0Xew05wKZgXcV9t8vpMnc",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\r\n    \"email\":\"lucystell@gmail.com\",\r\n    \"app_uuid\":\"b87f7e03-87b8-4065-8bbe-e15c49ed40e0\",\r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/blacklists",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"blacklists"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Agregado de forma existosa",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"miguelag@gmail.com\",\r\n    \"app_uuid\":\"b87f7e03-87b8-4065-8bbe-e15c49ed40e0\",\r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/blacklists",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"blacklists"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.10.16"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:48:35 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Email agregado a la lista negra\"\n}"
+				},
+				{
+					"name": "Agregar correo que ya existe",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"miguelag@gmail.com\",\r\n    \"app_uuid\":\"b87f7e03-87b8-4065-8bbe-e15c49ed40e0\",\r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/blacklists",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"blacklists"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.10.16"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:49:31 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "51"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Email ya está en la lista negra\"\n}"
+				},
+				{
+					"name": "Formato de email invalido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"miguelaggmail.com\",\r\n    \"app_uuid\":\"b87f7e03-87b8-4065-8bbe-e15c49ed40e0\",\r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/blacklists",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"blacklists"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.10.16"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:50:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "45"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Formato de email inválido\"\n}"
+				},
+				{
+					"name": "Formato UUID invalido",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"miguelag@gmail.com\",\r\n    \"app_uuid\":\"b87f7e0387b8-4065-8bbe-e15c49ed40e0\",\r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/blacklists",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"blacklists"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.10.16"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:50:27 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "44"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Formato de UUID inválido\"\n}"
+				},
+				{
+					"name": "Campo vacio 1",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"miguelag@gmail.com\",\r\n    \"app_uuid\":\"b87f7e03-87b8-4065-8bbe-e15c49ed40e0\"\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/blacklists",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"blacklists"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.10.16"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:50:59 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El campo \\\"blocked_reason\\\" es obligatorio y no puede estar vacío\"\n}"
+				},
+				{
+					"name": "Campo vacio 2",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"miguelag@gmail.com\",\r\n    \r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/blacklists",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"blacklists"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.10.16"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:51:19 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "79"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El campo \\\"app_uuid\\\" es obligatorio y no puede estar vacío\"\n}"
+				},
+				{
+					"name": "Campo vacio 3",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\r\n    \"app_uuid\":\"b87f7e03-87b8-4065-8bbe-e15c49ed40e0\",\r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/blacklists",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"blacklists"
+							]
+						}
+					},
+					"status": "BAD REQUEST",
+					"code": 400,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.10.16"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:51:36 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "76"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"El campo \\\"email\\\" es obligatorio y no puede estar vacío\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Verificar correo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MzMwNjYyNSwianRpIjoiNGNiMmJhOWEtMTNkOC00YjQ0LTk1MGMtNjNhN2NiZTc2ZWMxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InN0YXRpYy11c2VyIiwibmJmIjoxNzQzMzA2NjI1LCJjc3JmIjoiMTRjNTAyOWMtNDBmYS00MTJmLTgzZDctMDJkZTY2N2QwNTAzIn0.7UFGQVBZJnQ8Ah0mccg9czjl2HZpzob8f9LCftHZfNw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/blacklists/miguelagc@gmail.com",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"blacklists",
+						"miguelagc@gmail.com"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Correo no esta en la lista",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/blacklists/miguelagc@gmail.com",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"blacklists",
+								"miguelagc@gmail.com"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.10.16"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:53:25 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"blacklisted\": false\n}"
+				},
+				{
+					"name": "Correo que si esta en la lista",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://127.0.0.1:5000/blacklists/miguelagc@gmail.com",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"blacklists",
+								"miguelagc@gmail.com"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.1.3 Python/3.10.16"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 27 Mar 2025 20:53:45 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"blacklisted\": false\n}"
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5000/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:5000/health",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5000",
+					"path": [
+						"health"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
