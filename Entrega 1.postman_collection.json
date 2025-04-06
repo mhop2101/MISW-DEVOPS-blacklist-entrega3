@@ -15,7 +15,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MzMwNzA3MSwianRpIjoiNjMyNTU0ZDgtN2FiOS00NTY1LWJkZTAtNzRkMTdhMGI5Y2FiIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InN0YXRpYy11c2VyIiwibmJmIjoxNzQzMzA3MDcxLCJjc3JmIjoiMzYxNDQ2MjEtNjg0Ni00NTMwLWIyMGQtZDc3YzNmY2NkMTM4In0.b081hob56WxtLr1Ft2m-Bc0Xew05wKZgXcV9t8vpMnc",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MzkwMjY5OCwianRpIjoiY2M0MDFjNGMtYzRiNi00M2M2LThkNDItNWQzMDY1NzlkOWY0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InN0YXRpYy11c2VyIiwibmJmIjoxNzQzOTAyNjk4LCJjc3JmIjoiYjM4NWFjZjEtNjk1YS00NzkxLThjZGMtNTczNjNhOGU0MzAxIn0.Ovj-FKtvTLIrs1vvpSd5-7O8BVc7Ivaio3ye8gwbV_o",
 							"type": "string"
 						}
 					]
@@ -24,7 +24,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n\r\n    \"email\":\"lucystell@gmail.com\",\r\n    \"app_uuid\":\"b87f7e03-87b8-4065-8bbe-e15c49ed40e0\",\r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
+					"raw": "{\r\n\r\n    \"email\":\"lucystelly@gmail.com\",\r\n    \"app_uuid\":\"b87f7e03-87b8-4065-8bbe-e15c49ed40e0\",\r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -32,15 +32,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/blacklists",
-					"protocol": "http",
+					"raw": "{{host}}/blacklists",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{host}}"
 					],
-					"port": "5000",
 					"path": [
 						"blacklists"
 					]
@@ -54,7 +49,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"email\":\"miguelag@gmail.com\",\r\n    \"app_uuid\":\"b87f7e03-87b8-4065-8bbe-e15c49ed40e0\",\r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
+							"raw": "{\r\n    \"email\":\"miguelaag@gmail.com\",\r\n    \"app_uuid\":\"b87f7e03-87b8-4065-8bbe-e15c49ed40e0\",\r\n    \"blocked_reason\":\"unsuscribed!\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -62,15 +57,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/blacklists",
-							"protocol": "http",
+							"raw": "{{host}}/blacklists",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{host}}"
 							],
-							"port": "5000",
 							"path": [
 								"blacklists"
 							]
@@ -119,15 +109,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/blacklists",
-							"protocol": "http",
+							"raw": "{{host}}/blacklists",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{host}}"
 							],
-							"port": "5000",
 							"path": [
 								"blacklists"
 							]
@@ -176,15 +161,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/blacklists",
-							"protocol": "http",
+							"raw": "{{host}}/blacklists",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{host}}"
 							],
-							"port": "5000",
 							"path": [
 								"blacklists"
 							]
@@ -233,15 +213,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/blacklists",
-							"protocol": "http",
+							"raw": "{{host}}/blacklists",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{host}}"
 							],
-							"port": "5000",
 							"path": [
 								"blacklists"
 							]
@@ -290,15 +265,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/blacklists",
-							"protocol": "http",
+							"raw": "{{host}}/blacklists",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{host}}"
 							],
-							"port": "5000",
 							"path": [
 								"blacklists"
 							]
@@ -347,15 +317,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/blacklists",
-							"protocol": "http",
+							"raw": "{{host}}/blacklists",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{host}}"
 							],
-							"port": "5000",
 							"path": [
 								"blacklists"
 							]
@@ -404,15 +369,10 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/blacklists",
-							"protocol": "http",
+							"raw": "{{host}}/blacklists",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{host}}"
 							],
-							"port": "5000",
 							"path": [
 								"blacklists"
 							]
@@ -456,7 +416,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MzMwNjYyNSwianRpIjoiNGNiMmJhOWEtMTNkOC00YjQ0LTk1MGMtNjNhN2NiZTc2ZWMxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InN0YXRpYy11c2VyIiwibmJmIjoxNzQzMzA2NjI1LCJjc3JmIjoiMTRjNTAyOWMtNDBmYS00MTJmLTgzZDctMDJkZTY2N2QwNTAzIn0.7UFGQVBZJnQ8Ah0mccg9czjl2HZpzob8f9LCftHZfNw",
+							"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc0MzkwMjY5OCwianRpIjoiY2M0MDFjNGMtYzRiNi00M2M2LThkNDItNWQzMDY1NzlkOWY0IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6InN0YXRpYy11c2VyIiwibmJmIjoxNzQzOTAyNjk4LCJjc3JmIjoiYjM4NWFjZjEtNjk1YS00NzkxLThjZGMtNTczNjNhOGU0MzAxIn0.Ovj-FKtvTLIrs1vvpSd5-7O8BVc7Ivaio3ye8gwbV_o",
 							"type": "string"
 						}
 					]
@@ -464,15 +424,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/blacklists/miguelagc@gmail.com",
-					"protocol": "http",
+					"raw": "{{host}}/blacklists/miguelagc@gmail.com",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{host}}"
 					],
-					"port": "5000",
 					"path": [
 						"blacklists",
 						"miguelagc@gmail.com"
@@ -486,15 +441,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/blacklists/miguelagc@gmail.com",
-							"protocol": "http",
+							"raw": "{{host}}/blacklists/miguelagc@gmail.com",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{host}}"
 							],
-							"port": "5000",
 							"path": [
 								"blacklists",
 								"miguelagc@gmail.com"
@@ -535,15 +485,10 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/blacklists/miguelagc@gmail.com",
-							"protocol": "http",
+							"raw": "{{host}}/blacklists/miguelagc@gmail.com",
 							"host": [
-								"127",
-								"0",
-								"0",
-								"1"
+								"{{host}}"
 							],
-							"port": "5000",
 							"path": [
 								"blacklists",
 								"miguelagc@gmail.com"
@@ -598,15 +543,10 @@
 					}
 				},
 				"url": {
-					"raw": "http://127.0.0.1:5000/login",
-					"protocol": "http",
+					"raw": "{{host}}/login",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{host}}"
 					],
-					"port": "5000",
 					"path": [
 						"login"
 					]
@@ -623,15 +563,10 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://127.0.0.1:5000/health",
-					"protocol": "http",
+					"raw": "{{host}}/health",
 					"host": [
-						"127",
-						"0",
-						"0",
-						"1"
+						"{{host}}"
 					],
-					"port": "5000",
 					"path": [
 						"health"
 					]
