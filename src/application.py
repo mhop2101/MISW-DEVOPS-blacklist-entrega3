@@ -1,7 +1,6 @@
 from flask import Flask
 from extensions import db, jwt
-from client.routes import routes_bp  
-import os
+from client.routes import routes_bp
 
 # Inicializar Flask y configuración
 application = Flask(__name__)

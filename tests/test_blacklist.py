@@ -1,7 +1,7 @@
 import sys
 import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../src')))
 
 import unittest
 from unittest.mock import patch, MagicMock
@@ -35,7 +35,7 @@ class TestRoutes(unittest.TestCase):
 
     def test_health(self):
         response = self.app.get('/health')
-        self.assertEqual(response.status_code, 201)
+        self.assertEqual(response.status_code, 200)
         self.assertEqual(response.get_json(), {'status': 'ok'})
 
     def test_login(self):
