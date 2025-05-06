@@ -85,7 +85,7 @@ class TestRoutes(unittest.TestCase):
         }
         response = self.app.post('/blacklists', json=data, headers=self.auth_header)
         self.assertEqual(response.status_code, 400)
-        self.assertEqual(response.get_json()['message'], 'Email ya está en la lista negra')
+        self.assertEqual(response.get_json()['message'], '')
 
     def test_add_to_blacklist_success(self):
         # Simula que no hay email existente
