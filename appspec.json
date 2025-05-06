@@ -7,7 +7,7 @@
           "Properties": {
             "TaskDefinition": "<TASK_DEFINITION>",
             "LoadBalancerInfo": {
-              "ContainerName": "container-app-blacklistt",
+              "ContainerName": "container-app-blacklist",
               "ContainerPort": 5000
             }
           }
