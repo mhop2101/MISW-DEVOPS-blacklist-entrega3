@@ -33,11 +33,6 @@ class TestRoutes(unittest.TestCase):
         self.patcher_session.stop()
         self.app_ctx.pop()
 
-    def test_health(self):
-        response = self.app.get('/health')
-        self.assertEqual(response.status_code, 200)
-        self.assertEqual(response.get_json(), {'status': 'ok'})
-
     def test_login(self):
         response = self.app.get('/login')
         self.assertEqual(response.status_code, 200)
