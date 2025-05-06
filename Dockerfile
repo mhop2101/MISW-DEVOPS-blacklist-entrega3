@@ -4,7 +4,7 @@ WORKDIR /app
 COPY . /app/
 
 RUN pip install --upgrade pip \
-    && pip install --no-cache-dir -r src/requirements.txt
+    && pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 5000
 
