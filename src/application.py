@@ -17,4 +17,4 @@ jwt.init_app(application)
 application.register_blueprint(routes_bp)  # Registra el blueprint en la app
 
 if __name__ == '__main__':
-    application.run(debug=True)
+    application.run(host = "0.0.0.0", port = 5000, debug=True)
