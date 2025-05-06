@@ -68,4 +68,4 @@ def check_blacklist(email):
     
 @routes_bp.route('/health', methods=['GET'])
 def health():
-    return jsonify({'status': 'ok'}), 500
+    return jsonify({'status': 'ok'}), 200
