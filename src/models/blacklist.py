@@ -1,5 +1,6 @@
 from extensions import db
 
+
 class Blacklist(db.Model):
     __tablename__ = 'blacklist'  # El nombre de la tabla en la base de datos
 

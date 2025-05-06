@@ -8,17 +8,31 @@ phases:
 
   pre_build:
     commands:
-      - echo Setting up environment variables and other setup ...
+      - echo Setting up environment variables for test ...
       - export FLASK_ENV=test
+      - echo Logging into aws ECR...
+      - aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 403245568912.dkr.ecr.us-east-1.amazonaws.com
 
   build:
     commands:
-      - pytest tests/ 
+      - echo Build started on `date`
+      - echo Running unit tests...
+      - pytest tests/ --junitxml=reports/test-report.xml
+      - echo Building the Docker image...
+      - docker build -t blacklist_app .
+      - docker tag blacklist_app:latest 403245568912.dkr.ecr.us-east-1.amazonaws.com/blacklist_app:latest
 
   post_build:
     commands:
-      - echo Build complete
-      - echo Tests finished
+      - echo Build completed on `date`
+      - echo Pushing the docker image
+      - docker push 403245568912.dkr.ecr.us-east-1.amazonaws.com/blacklist_app:latest
+      - echo Writing Image Definitions file...
+      - printf '[{"name":"Container-app-blacklist","imageUri":"403245568912.dkr.ecr.us-east-1.amazonaws.com/blacklist_app:latest"}]' > imagedefinitions.json
+      - printf '{"ImageURI":"403245568912.dkr.ecr.us-east-1.amazonaws.com/blacklist_app:latest"}' >imageDetail.json
+      - cat imagedefinitions.json
 artifacts:
   files:
     - '**/*'
+    - imagedefinitions.json
+    - imageDetail.json
